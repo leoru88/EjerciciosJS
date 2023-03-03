@@ -1,0 +1,4 @@
+Inscripción de alumnos. Mostrar los alumnos que ya están inscritos en 4 materias, mostrar
+los nuevos alumnos que se inscribieron y también los que no pudieron hacerlo debido a que
+se superó el máximo de 5 alumnos por clase y por último mostrar los alumnos que se integraron
+junto a los que ya estaban adentro.
