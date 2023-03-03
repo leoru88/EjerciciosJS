@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ejercicio1</title>
+  </head>
+
+  <body>
+    <script language="JavaScript">
+      alert("Bienvenido al ejercicio #01");
+
+      let free = false;
+
+      const validarCliente = (time) => {
+        let edad = prompt("Hola, cual es tu edad?");
+        if (edad > 18) {
+          if (time >= 2 && time < 7 && free == false) {
+            alert(
+              "Bienvenido, 'TE HAS GANADO UNA MEMBRESIA' por haber ingresado despues de las 2AM"
+            );
+            free = true;
+          } else {
+            alert(`Bienvenido a nuestro sitio web, son las ${time}:00Hs`);
+          }
+        } else {
+          alert(
+            "No puedes ingresar a nuestro sitio web, debido a que eres menor de edad"
+          );
+        }
+      };
+
+      validarCliente(23);
+      validarCliente(24);
+      validarCliente(0.2);
+      validarCliente(0.6);
+      validarCliente(1);
+      validarCliente(2);
+      validarCliente(2.4);
+      validarCliente(3);
+    </script>
+  </body>
+</html>
