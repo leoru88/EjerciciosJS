@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ejercicio6</title>
+  </head>
+
+  <body>
+    <script language="JavaScript">
+      alert("Bienvenido al ejercicio #06");
+
+      /* Mostrar las funciones de una app y las caracteristicas de 7 apps diferentes */
+
+      class App {
+        constructor(nombre, descargas, puntuacion, peso) {
+          this.nombre = nombre;
+          this.descargas = descargas;
+          this.puntuacion = puntuacion;
+          this.peso = peso;
+          this.iniciada = false;
+          this.instalada = false;
+        }
+        instalar() {
+          if (this.instalada == false) {
+            this.instalada = true;
+            alert("app instalada correctamente");
+          }
+        }
+        desinstalar() {
+          if (this.instalada == true) {
+            this.instalada = false;
+            alert("app desinstalada correctamente");
+          }
+        }
+        abrir() {
+          if (this.iniciada == false && this.instalada == true) {
+            this.iniciada = true;
+            alert("app encendida");
+          }
+        }
+        cerrar() {
+          if (this.iniciada == true && this.instalada == true) {
+            this.iniciada = false;
+            alert("app cerrada");
+          }
+        }
+        appInfo() {
+          return `
+            Nombre: <b>${this.nombre}</b><br>
+			Descargas: <b>${this.descargas}</b></br>
+			Puntuación: <b>${this.puntuacion}</b></br>
+			Peso: <b>${this.peso}</b></br>
+			`;
+        }
+      }
+
+      app = new App("Google maps", "16.000", "6 Estrellas", "580MB");
+      app2 = new App("Facebook", "10.000", "4 Estrellas", "900MB");
+      app3 = new App("Instagram", "9.000", "3 Estrellas", "80MB");
+      app4 = new App("Twitter", "16.000", "9 Estrellas", "1GB");
+      app5 = new App("Traductor", "17.000", "5 Estrellas", "590MB");
+      app6 = new App("Winrar", "4 Estrellas", "980MB");
+      app7 = new App("Linkedin", "7 Estrellas", "4GB");
+
+      document.write(`
+	${app.appInfo()} <br>
+	${app2.appInfo()} <br>
+	${app3.appInfo()} <br>
+	${app4.appInfo()} <br>
+	${app5.appInfo()} <br>
+	${app6.appInfo()} <br>
+	${app7.appInfo()} <br>
+	`);
+
+      app.instalar();
+      app.abrir();
+      app.cerrar();
+      app.desinstalar();
+    </script>
+  </body>
+</html>
