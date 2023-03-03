@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ejercicio7</title>
+  </head>
+
+  <body>
+    <script language="JavaScript">
+      alert("Bienvenido al ejercicio #07");
+
+      /* Realizar una calculadora con diversas funciones: */
+
+      class Calculadora {
+        constructor() {}
+        sumar(num1, num2) {
+          return parseInt(num1) + parseInt(num2);
+        }
+        restar(num1, num2) {
+          return parseInt(num1) - parseInt(num2);
+        }
+        dividir(num1, num2) {
+          return parseInt(num1) / parseInt(num2);
+        }
+        multiplicar(num1, num2) {
+          return parseInt(num1) * parseInt(num2);
+        }
+        potenciar(num, exp) {
+          return num ** exp;
+        }
+        raizCuadrada(num) {
+          return Math.sqrt(num);
+        }
+        raizCubica(num) {
+          return Math.cbrt(num);
+        }
+      }
+
+      const calculadora = new Calculadora();
+
+      alert("Que operacion deseas realizar en la calculadora'?");
+      let operacion = prompt(
+        "1: sumar, 2: restar, 3: dividir, 4: multiplicar, 5: potenciar, 6: Raiz Cuadrada , 7: Raiz Cubica "
+      );
+
+      if (operacion == 1) {
+        let numero1 = prompt("Ingrese el primer numero de la suma");
+        let numero2 = prompt("Ingrese el segundo numero de la suma");
+        resultado = calculadora.sumar(numero1, numero2);
+        alert(`tu resultado es ${resultado}`);
+      } else if (operacion == 2) {
+        let numero1 = prompt("Ingrese el primer numero de la resta");
+        let numero2 = prompt("Ingrese el segundo numero de la resta");
+        resultado = calculadora.restar(numero1, numero2);
+        alert(`tu resultado es ${resultado}`);
+      } else if (operacion == 3) {
+        let numero1 = prompt("Ingrese el primer numero de la division");
+        let numero2 = prompt("Ingrese el segundo numero de la division");
+        resultado = calculadora.dividir(numero1, numero2);
+        alert(`tu resultado es ${resultado}`);
+      } else if (operacion == 4) {
+        let numero1 = prompt("Ingrese el primer numero de la multiplicacion");
+        let numero2 = prompt("Ingrese el segundo numero de la multiplicacion");
+        resultado = calculadora.multiplicar(numero1, numero2);
+        alert(`tu resultado es ${resultado}`);
+      } else if (operacion == 5) {
+        let numero1 = prompt("Ingrese el numero a potenciar");
+        let numero2 = prompt("Ingrese el exponente");
+        resultado = calculadora.potenciar(numero1, numero2);
+        alert(`tu resultado es ${resultado}`);
+      } else if (operacion == 6) {
+        let numero1 = prompt("Conocer la raiz cuadrada de: ");
+        resultado = calculadora.raizCuadrada(numero1);
+        alert(`tu resultado es ${resultado}`);
+      } else if (operacion == 7) {
+        let numero1 = prompt("Conocer la raiz cubica de: ");
+        resultado = calculadora.raizCubica(numero1);
+        alert(`tu resultado es ${resultado}`);
+      } else {
+        alert("No se ha encontrado la operacion");
+      }
+    </script>
+  </body>
+</html>
