@@ -1,0 +1,1 @@
+Permitir el acceso a un sitio web para usuarios mayores de edad, otorgando una membresía gratuita a un usuario en específico.
