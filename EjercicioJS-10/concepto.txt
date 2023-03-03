@@ -1,0 +1,1 @@
+Mostrar una selección de 16 llaves para que el usuario pueda elegir y comprar una.
