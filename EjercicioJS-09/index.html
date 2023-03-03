@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ejercicio9</title>
+  </head>
+
+  <body>
+    <script language="JavaScript">
+      alert("Bienvenido al ejercicio #09");
+
+      /* Inscripcion de alumnos:
+
+      1) Mostrar los alumnos que ya estan inscritos en las 4
+      materias.
+
+      2) Mostrar los alumnos que se inscribieron y tambien los 
+      que no pudieron debido a que superaron el maximo de 5 
+      alumnos por clase.
+
+      3) Mostrar los alumnos que se integraron junto a los que
+      ya estaban adentro.
+      */
+
+      let materias = {
+        fisica: [" Juan", " Billy"],
+        programacion: [" Roberto", " Alexis"],
+        logica: [" Roberto"],
+        quimica: [" Alexis", " Billy"],
+      };
+
+      const inscribir = (alumno, materia) => {
+        personas = materias[materia];
+
+        if (personas.length >= 5) {
+          document.write(`<b style='color:blue'>Lo siento
+		      <b style='color:green'> ${alumno},
+		      <b style='color:blue'> los cupos para 
+		      <b style='color:red'>${materia} 
+		      <b style='color:blue'>ya estan full <br>`);
+        } else {
+          personas.push(alumno);
+          if (materia == "fisica") {
+            materias = {
+              fisica: personas,
+              programacion: materias["programacion"],
+              logica: materias["logica"],
+              quimica: materias["quimica"],
+            };
+          } else if (materia == "programacion") {
+            materias = {
+              fisica: materias["fisica"],
+              programacion: personas,
+              logica: materias["logica"],
+              quimica: materias["quimica"],
+            };
+          } else if (materia == "logica") {
+            materias = {
+              fisica: materias["fisica"],
+              programacion: materias["programacion"],
+              logica: personas,
+              quimica: materias["quimica"],
+            };
+          } else if (materia == "quimica") {
+            materias = {
+              fisica: materias["fisica"],
+              programacion: materias["programacion"],
+              logica: materias["logica"],
+              quimica: personas,
+            };
+          }
+          document.write(`<b style='color:blue'> Felicidades 
+				<b style='color:green'>${alumno}, 
+				<b style='color:blue'> te has inscrito correctamente en: 
+				<b style='color:red'>${materia}<br>`);
+        }
+      };
+
+      document.write(
+        `<b style='color:blue'> Los estudiantes de</b> <b style='color:red'>Física</b> <b style='color:blue'>son: </b><b style='color:green'>${materias["fisica"]} </b><br>`
+      );
+      document.write(
+        `<b style='color:blue'> Los estudiantes de</b> <b style='color:red'>Programación</b> <b style='color:blue'>son: </b><b style='color:green'>${materias["programacion"]} </b><br>`
+      );
+      document.write(
+        `<b style='color:blue'> Los estudiantes de</b> <b style='color:red'>Lógica</b> <b style='color:blue'>son : </b><b style='color:green'>${materias["logica"]} </b><br>`
+      );
+      document.write(
+        `<b style='color:blue'> Los estudiantes de</b> <b style='color:red'>Química</b> <b style='color:blue'>son: </b><b style='color:green'>${materias["quimica"]} </b><br><br>`
+      );
+
+      inscribir(" Matew", "fisica");
+      inscribir(" Bruce", "programacion");
+      inscribir(" Melany", "logica");
+      inscribir(" Maia", "quimica");
+      inscribir(" Andrea", "fisica");
+      inscribir(" Angel", "quimica");
+      inscribir(" Albert", "fisica");
+      inscribir(" David", "quimica");
+      inscribir(" Hector", "programacion");
+      inscribir(" Katy", "programacion");
+      inscribir(" Sofia", "logica");
+      inscribir(" Dario", "logica");
+      inscribir(" Angie", "logica");
+      inscribir(" Sebastian", "fisica");
+      inscribir(" Romeo", "quimica");
+      inscribir(" Victoria", "programacion");
+      inscribir(" Alex", "logica");
+
+      document.write(
+        `<br><b style='color:blue'> Los estudiantes de </b> <b style='color:red'>Física</b> <b style='color:blue'> ahora son: </b><b style='color:green'>${materias["fisica"]} </b><br>`
+      );
+      document.write(
+        `<br><b style='color:blue'> Los estudiantes de </b> <b style='color:red'>Programación</b> <b style='color:blue'> ahora son: </b><b style='color:green'>${materias["programacion"]} </b><br>`
+      );
+      document.write(
+        `<br><b style='color:blue'> Los estudiantes de </b> <b style='color:red'>Lógica</b> <b style='color:blue'> ahora son: </b><b style='color:green'>${materias["logica"]} </b><br>`
+      );
+      document.write(
+        `<br><b style='color:blue'> Los estudiantes de </b> <b style='color:red'>Química</b> <b style='color:blue'> ahora son: </b><b style='color:green'>${materias["quimica"]} </b><br>`
+      );
+    </script>
+  </body>
+</html>
