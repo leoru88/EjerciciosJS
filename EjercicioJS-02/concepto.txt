@@ -1,0 +1,1 @@
+Indicar una cantidad de alumnos junto con sus asistencias e inasistencias, mostrar la información recaudada de cada alumno, los cuales reprobarán por inasistencia si estuvieron ausentes 5 veces.
