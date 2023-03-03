@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ejercicio4</title>
+  </head>
+
+  <body>
+    <script language="JavaScript">
+      alert("Bienvenido al ejercicio #04");
+
+      class Animal {
+        constructor(especie, edad, color) {
+          this.especie = especie;
+          this.edad = edad;
+          this.color = color;
+          this.info = `El animal es de la especie ${this.especie}, tiene ${this.edad} 
+        años de edad y es de color ${this.color}`;
+        }
+        verInfo() {
+          document.write(this.info + "<br>");
+        }
+      }
+
+      class Perro extends Animal {
+        constructor(especie, edad, color, raza) {
+          super(especie, edad, color);
+          this.raza = raza;
+          this.info2 = `El animal es de la especie ${this.especie}, tiene ${this.edad} 
+        años de edad, es de color ${this.color} y su raza es ${this.raza}`;
+        }
+
+        verInfo2() {
+          document.write(this.info2 + "<br>");
+        }
+      }
+
+      const perro = new Perro("canino", 5, "negro", "pitbull");
+      const gato = new Animal("felino", 4, "blanco");
+      const ave = new Animal("ave", 2, "verde");
+      const herbívoros = new Perro("herbívoro", 10, "negro", "ovino");
+      const reptil = new Animal("reptil", 15, "Verde");
+
+      perro.verInfo2();
+      gato.verInfo();
+      ave.verInfo();
+      herbívoros.verInfo2();
+      reptil.verInfo();
+
+    </script>
+  </br>
+</html>
