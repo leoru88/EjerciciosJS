@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ejercicio10</title>
+
+	<!--"Mostrar una seleccion de 16 llaves para que el usuario pueda elegir y comprar una"-->
+
+    <style>
+      .ejercicio10 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        color: #333;
+        font-family: sans-serif;
+      }
+      body {
+        overflow: hidden;
+      }
+      .flex-item {
+        flex-grow: 1;
+        margin: 20px;
+        max-width: 300px;
+        border: 2px solid #333;
+        padding: 0 20px;
+      }
+      .flex-item:hover {
+        border-color: #71a110;
+        box-shadow: 0px 0px 13px #71a110;
+      }
+      .flex-item:focus {
+        border-color: #71a110;
+        box-shadow: 0px 0px 13px #71a110;
+      }
+      h2,
+      h3 {
+        margin: 0;
+      }
+      h3 {
+        color: #999;
+      }
+      p b {
+        color: #71a110;
+      }
+      .llave-img {
+        width: 100px;
+      }
+      form {
+        width: 100%;
+        text-align: center;
+        padding: 30px;
+      }
+      input[type="submit"] {
+        background: #317124;
+        color: #fff;
+        border: none;
+        padding: 20px 50px;
+        font-size: 20px;
+        letter-spacing: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="ejercicio10"></div>
+
+    <form>
+      <input type="hidden" name="data" class="key-data" />
+      <input type="submit" value="COMPRAR" class="send-button" />
+    </form>
+
+    <script language="JavaScript">
+      alert("Bienvenido al ejercicio #10");
+
+      const contenedor = document.querySelector(".ejercicio10");
+
+      function crearLLave(nombre, modelo, precio) {
+        img =
+          "<img class='llave-img' src='https://img.freepik.com/vector-premium/ilustracion-vector-llave-oro-aislada_117553-17.jpg?w=740'>";
+        nombre = `<h2>${nombre}</h2>`;
+        modelo = `<h3>${modelo}</h3>`;
+        precio = `<p>precio: <b>$${precio}</b></p>`;
+        return [img, nombre, modelo, precio];
+      }
+
+      let documentFragment = document.createDocumentFragment();
+
+      for (var i = 1; i <= 16; i++) {
+        let modeloRandom = Math.round(Math.random() * 10000);
+        let precioRandom = Math.round(Math.random() * 10 + 30);
+
+        let llave = crearLLave(
+          `llave ${i}`,
+          `modelo ${modeloRandom}`,
+          `precio ${precioRandom}`
+        );
+        let div = document.createElement("DIV");
+
+        div.addEventListener("click", () => {
+          document.querySelector(".key-data").value = modeloRandom;
+        });
+
+        div.tabIndex = i;
+        div.classList.add(`item-${i}`, "flex-item");
+        div.innerHTML = llave[0] + llave[1] + llave[2] + llave[3];
+        documentFragment.appendChild(div);
+      }
+      contenedor.appendChild(documentFragment);
+    </script>
+  </body>
+</html>
