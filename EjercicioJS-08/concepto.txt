@@ -1,0 +1,1 @@
+Mostrar cuatro materias diferentes, el profesor de cada materia, los alumnos totales en cada materia y tanto la cantidad como el nombre de materias que ve cada alumno.
