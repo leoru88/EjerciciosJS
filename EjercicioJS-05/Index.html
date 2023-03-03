@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ejercicio5</title>
+  </head>
+
+  <body>
+    <script language="JavaScript">
+      alert("Bienvenido al ejercicio #05");
+
+      /* Mostrar las funciones y caracteristicas de 3 telefonos
+		inteligentes de diferentes gamas.*/
+
+      class Celular {
+        constructor(color, peso, tamano, rdc, ram, marca) {
+          this.color = color;
+          this.peso = peso;
+          this.tamano = tamano;
+          this.resolucionDeCamara = rdc;
+          this.memoriaRam = ram;
+          this.marcaCelular = marca;
+          this.encendido = false;
+        }
+        presionarBotonEncendido() {
+          if (this.encendido == false) {
+            alert("El telefono gama media esta encendido");
+            this.encendido = true;
+          } else {
+            alert("El telefono gama media esta apagado");
+            this.encendido = false;
+          }
+        }
+        reiniciar() {
+          if (this.encendido == true) {
+            alert("El telefono gama media se esta reiniciando");
+          } else {
+            alert("El telefono gama media esta apagado");
+          }
+        }
+        tomarFoto() {
+          alert(`Foto tomada en una resolucion de: ${this.resolucionDeCamara}
+               con el telefono gama media`);
+        }
+        grabarVideo() {
+          alert(`Grabando video en una resolucion de ${this.resolucionDeCamara}
+              con el telefono gama media`);
+        }
+
+        mobileInfo() {
+          return `
+		Color: <b>${this.color}</b></br>
+		Peso: <b>${this.peso}</b></br>
+		Tamano: <b>${this.tamano}</b></br>
+		Resolucion de camara: <b>${this.resolucionDeCamara}</b></br>
+		Memoria Ram: <b>${this.memoriaRam}</b></br>
+		Marca del telefono: <b>${this.marcaCelular}</b></br>
+		`;
+        }
+      }
+
+      class CelularAltaGama extends Celular {
+        constructor(
+          color,
+          peso,
+          tamano,
+          rdc,
+          ram,
+          marca,
+          rdce,
+          rescamlenta,
+          tiprecfac
+        ) {
+          super(color, peso, tamano, rdc, ram, marca);
+          this.resolucionDeCamaraExtra = rdce;
+          this.camaraLenta = rescamlenta;
+          this.reconocimientoFacial = tiprecfac;
+        }
+        grabarVideoLento() {
+          alert(`Estas grabando con la camara lenta de un telefono gama alta
+              utilizando una resolucion de ${this.camaraLenta}`);
+        }
+        reconocimientoFacialGamaALta() {
+          alert(`Estas realizando un reconocimiento facial con la version ${this.reconocimientoFacial} 
+               de la app en un telefono gama alta`);
+        }
+        infoAltaGama() {
+          return (
+            this.mobileInfo() +
+            `
+        Resolucion de Camara extra: <b>${this.resolucionDeCamaraExtra}</b></br>
+        Resolucion de Camara lenta: <b>${this.camaraLenta}</b></br>
+        Tipo de reconocimiento facial: <b>${this.reconocimientoFacial}</b></br>`
+          );
+        }
+      }
+
+      celular1 = new Celular("Rojo", "150g", "HD", "16MGPX", "2GB", "Samsung");
+      celular2 = new Celular(
+        "Azul",
+        "200g",
+        "FHD",
+        "20MGPX",
+        "4GB",
+        "Motorola"
+      );
+      celular3 = new Celular("Negro", "350g", "UHD", "50MGPX", "6GB", "Xiaomi");
+
+      document.write("<b>Celulares GAMA MEDIA: </b>" + "<br><br>");
+      document.write(`
+	${celular1.mobileInfo()} <br><br>
+	${celular2.mobileInfo()} <br><br>
+	${celular3.mobileInfo()} <br><br>
+	`);
+
+      celular1.presionarBotonEncendido();
+      celular1.reiniciar();
+      celular1.tomarFoto();
+      celular1.grabarVideo();
+
+      celular4 = new CelularAltaGama(
+        "Negro",
+        "130g",
+        "5.2pulgadas",
+        "4k",
+        "8GB",
+        "FHD",
+        "Samsung",
+        "32MGPX",
+        "3.0"
+      );
+      celular5 = new CelularAltaGama(
+        "Azul",
+        "180g",
+        "6pulgadas",
+        "8k",
+        "16GB",
+        "UHD",
+        "Samsung",
+        "50MGPX",
+        "2.0"
+      );
+
+      document.write("<b>Celulares GAMA ALTA: </b>" + "<br><br>");
+      document.write(`
+	${celular4.infoAltaGama()} <br><br>
+	${celular5.infoAltaGama()} <br><br>
+	`);
+
+      celular4.grabarVideoLento();
+      celular4.reconocimientoFacialGamaALta();
+    </script>
+  </body>
+</html>
